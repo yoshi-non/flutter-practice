@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample02/text_field_page.dart';
 import 'my_home_page.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.pink,
       ),
       darkTheme: darkTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const TextFieldPage(),
     );
   }
 }
