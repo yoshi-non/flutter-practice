@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'my_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkTheme = ThemeData.from(
-      colorScheme: ColorScheme.dark(primary: Colors.green),
+      colorScheme: const ColorScheme.dark(primary: Colors.green),
     );
     return MaterialApp(
       title: 'Flutter Demo',
@@ -18,69 +19,6 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: darkTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            SizedBox(
-              height: 400,
-              width: 200,
-              child: GridView.count(
-                crossAxisCount: 3,
-                children: [
-                  for (var i = 0; i < 9; i++)
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: ColoredBox(
-                        color: Colors.pink,
-                      ),
-                    ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }
