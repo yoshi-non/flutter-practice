@@ -57,6 +57,22 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            SizedBox(
+              height: 400,
+              width: 200,
+              child: GridView.count(
+                crossAxisCount: 3,
+                children: [
+                  for (var i = 0; i < 9; i++)
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: ColoredBox(
+                        color: Colors.pink,
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
